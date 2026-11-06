@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lär dig känna igen och skydda dig mot bedrägerier på internet."
+    />
+    <title>Bedrägerier | Trygg på internet</title>
+    <style>
+      :root {
+        --navy: #0c2345;
+        --light-blue: #b7cde8;
+        --title-blue: #b0c9eb;
+        --page-background: #f8f8f7;
+        --focus: #6a35ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--page-background);
+        color: var(--navy);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.4;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        outline: 4px solid var(--focus);
+        outline-offset: 4px;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 10;
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+        background: #ffffff;
+        font-weight: 700;
+        transform: translateY(-200%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header {
+        display: flex;
+        min-height: 74px;
+        background: var(--navy);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 2rem;
+      }
+
+      .brand svg {
+        width: 48px;
+        height: 54px;
+      }
+
+      .site-navigation {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-end;
+        flex: 1;
+        padding-right: 1.25rem;
+        background: var(--light-blue);
+      }
+
+      .nav-link {
+        display: flex;
+        min-width: 68px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.15rem;
+        padding: 0.35rem 0.4rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .nav-link svg {
+        width: 38px;
+        height: 38px;
+        fill: var(--navy);
+      }
+
+      .breadcrumb {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem 2rem 2.8rem;
+        font-size: 0.85rem;
+      }
+
+      .breadcrumb a {
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        min-height: calc(100vh - 74px);
+        background: var(--navy);
+      }
+
+      .page-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem 5rem;
+      }
+
+      .page-title {
+        position: relative;
+        z-index: 1;
+        max-width: 320px;
+        margin: 0 auto -2.35rem;
+        padding: 1.35rem 1rem;
+        border-radius: 1.35rem;
+        background: var(--title-blue);
+        text-align: center;
+        font-size: 1.55rem;
+        line-height: 1.2;
+      }
+
+      .fraud-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.35rem;
+        padding-top: 5.35rem;
+      }
+
+      .fraud-card {
+        min-height: 265px;
+        padding: 1.6rem 1.8rem;
+        border-radius: 1.35rem;
+        background: var(--page-background);
+      }
+
+      .fraud-card h2 {
+        margin: 0;
+        font-size: 1.15rem;
+        line-height: 1.3;
+      }
+
+      .fraud-card p {
+        margin: 1rem 0 0;
+      }
+
+      .fraud-card ul,
+      .fraud-card ol {
+        margin: 1rem 0 0;
+        padding-left: 1.25rem;
+      }
+
+      .fraud-card li + li {
+        margin-top: 0.65rem;
+      }
+
+      @media (max-width: 680px) {
+        .brand {
+          padding: 0.6rem 1rem;
+        }
+
+        .site-navigation {
+          padding-right: 0.35rem;
+        }
+
+        .nav-link {
+          min-width: 58px;
+          font-size: 0.75rem;
+        }
+
+        .breadcrumb {
+          padding: 0.85rem 1rem 2.5rem;
+        }
+
+        .page-content {
+          padding: 0 1rem 3rem;
+        }
+
+        .fraud-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          padding-top: 4.7rem;
+        }
+
+        .fraud-card {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehållet</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Trygg på internet, startsida">
+        <svg viewBox="0 0 48 54" aria-hidden="true">
+          <path d="M24 2 43 12v15c0 12-7.5 20.5-19 25C12.5 47.5 5 39 5 27V12L24 2Z" fill="none" stroke="#ffffff" stroke-width="2" />
+          <path d="m13 26 7 7 15-15" fill="none" stroke="#ffffff" stroke-width="2" />
+        </svg>
+      </a>
+
+      <nav class="site-navigation" aria-label="Huvudmeny">
+        <a class="nav-link" href="#lattlast">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" />
+            <path d="M8 13c4-3 8-3 12 0v18c-4-3-8-3-12 0V13Zm24 0c-4-3-8-3-12 0v18c4-3 8-3 12 0V13Z" fill="#ffffff" />
+          </svg>
+          <span>Lättläst</span>
+        </a>
+        <a class="nav-link" href="#kontakt">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" />
+            <path d="M11 13h18v12H18l-5 4v-4h-2V13Z" fill="#ffffff" />
+          </svg>
+          <span>Kontakt</span>
+        </a>
+        <a class="nav-link" href="#meny">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" />
+            <path d="M12 13h2m4 0h10M12 20h2m4 0h10M12 27h2m4 0h10" stroke="#ffffff" stroke-width="2.5" />
+          </svg>
+          <span>Meny</span>
+        </a>
+      </nav>
+    </header>
+
+    <div class="breadcrumb">
+      <a href="index.html">Start</a>
+      <span aria-hidden="true"> &gt; </span>
+      <span aria-current="page">Bedrägerier</span>
+    </div>
+
+    <main id="main-content">
+      <div class="page-content">
+        <h1 class="page-title">Bedrägerier</h1>
+
+        <section class="fraud-grid" aria-labelledby="fraud-topics">
+          <h2 id="fraud-topics" class="visually-hidden">Så skyddar du dig mot bedrägerier</h2>
+
+          <article class="fraud-card">
+            <h2>Vanliga tecken på bedrägeri</h2>
+            <ul>
+              <li>Någon stressar dig att fatta ett snabbt beslut.</li>
+              <li>Du ombeds klicka på en länk eller lämna ut koder.</li>
+              <li>Erbjudandet verkar för bra för att vara sant.</li>
+              <li>Meddelandet innehåller felaktig adress eller ovanligt språk.</li>
+            </ul>
+          </article>
+
+          <article class="fraud-card">
+            <h2>Kontrollera avsändaren</h2>
+            <p>
+              Ring organisationen på ett telefonnummer du själv har hittat.
+              Använd inte kontaktuppgifter i meddelandet. Banker och myndigheter
+              ber dig inte att lämna ut ditt lösenord eller din engångskod.
+            </p>
+          </article>
+
+          <article class="fraud-card">
+            <h2>Skydda dina pengar</h2>
+            <p>
+              Logga in genom att skriva webbadressen själv eller använda den
+              officiella appen. Godkänn aldrig en betalning eller inloggning som
+              du inte själv har startat.
+            </p>
+          </article>
+
+          <article class="fraud-card">
+            <h2>Om du redan har blivit lurad</h2>
+            <ol>
+              <li>Kontakta banken direkt och spärra kort eller konto.</li>
+              <li>Byt lösenord som kan vara röjda.</li>
+              <li>Spara meddelanden och skärmbilder som bevis.</li>
+              <li>Polisanmäl bedrägeriet och berätta vad som har hänt.</li>
+            </ol>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
