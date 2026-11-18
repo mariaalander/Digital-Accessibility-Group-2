@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Råd till föräldrar om hur barn kan vara trygga och säkra på internet."
+      content="Lär dig känna igen och skydda dig mot bedrägerier på internet."
     />
-    <title>För föräldrar | Trygg på internet</title>
+    <title>Bedrägerier | Trygg på internet</title>
     <style>
       :root {
         --navy: #0c2345;
@@ -150,37 +150,37 @@
         line-height: 1.2;
       }
 
-      .password-grid {
+      .fraud-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.8rem 1.35rem;
+        gap: 1.35rem;
         padding-top: 5.35rem;
       }
 
-      .password-card {
+      .fraud-card {
         min-height: 265px;
         padding: 1.6rem 1.8rem;
         border-radius: 1.35rem;
         background: var(--page-background);
       }
 
-      .password-card:first-child {
-        grid-row: span 2;
-        min-height: 457px;
-      }
-
-      .password-card h2 {
+      .fraud-card h2 {
         margin: 0;
         font-size: 1.15rem;
         line-height: 1.3;
       }
 
-      .password-card ul {
-        margin: 1.2rem 0 0;
+      .fraud-card p {
+        margin: 1rem 0 0;
+      }
+
+      .fraud-card ul,
+      .fraud-card ol {
+        margin: 1rem 0 0;
         padding-left: 1.25rem;
       }
 
-      .password-card li + li {
+      .fraud-card li + li {
         margin-top: 0.65rem;
       }
 
@@ -206,21 +206,14 @@
           padding: 0 1rem 3rem;
         }
 
-        .password-grid {
+        .fraud-grid {
           grid-template-columns: 1fr;
           gap: 1rem;
           padding-top: 4.7rem;
         }
 
-        .password-card,
-        .password-card:first-child {
+        .fraud-card {
           min-height: auto;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          scroll-behavior: auto !important;
         }
       }
     </style>
@@ -229,14 +222,9 @@
     <a class="skip-link" href="#main-content">Hoppa till huvudinnehållet</a>
 
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Trygg på internet, startsida">
+      <a class="brand" href="../index.html" aria-label="Trygg på internet, startsida">
         <svg viewBox="0 0 48 54" aria-hidden="true">
-          <path
-            d="M24 2 43 12v15c0 12-7.5 20.5-19 25C12.5 47.5 5 39 5 27V12L24 2Z"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="2"
-          />
+          <path d="M24 2 43 12v15c0 12-7.5 20.5-19 25C12.5 47.5 5 39 5 27V12L24 2Z" fill="none" stroke="#ffffff" stroke-width="2" />
           <path d="m13 26 7 7 15-15" fill="none" stroke="#ffffff" stroke-width="2" />
         </svg>
       </a>
@@ -267,53 +255,54 @@
     </header>
 
     <div class="breadcrumb">
-      <a href="index.html">Start</a>
+      <a href="../index.html">Start</a>
       <span aria-hidden="true"> &gt; </span>
-      <span aria-current="page">För föräldrar</span>
+      <span aria-current="page">Bedrägerier</span>
     </div>
 
     <main id="main-content">
       <div class="page-content">
-        <h1 class="page-title">Föräldrar och barn</h1>
+        <h1 class="page-title">Bedrägerier</h1>
 
-        <section class="password-grid" aria-labelledby="parent-topics">
-          <h2 id="parent-topics" class="visually-hidden">Tryggare internet för barn</h2>
+        <section class="fraud-grid" aria-labelledby="fraud-topics">
+          <h2 id="fraud-topics" class="visually-hidden">Så skyddar du dig mot bedrägerier</h2>
 
-          <article class="password-card">
-            <h2>Prata med ditt barn</h2>
+          <article class="fraud-card">
+            <h2>Vanliga tecken på bedrägeri</h2>
             <ul>
-              <li>Visa intresse för vad barnet gör på nätet och vilka appar barnet använder.</li>
-              <li>Prata om att man aldrig måste svara på meddelanden som känns obehagliga.</li>
-              <li>Berätta att barnet alltid kan komma till dig, även om något redan har hänt.</li>
-              <li>Lyssna lugnt och undvik att skuldbelägga barnet när det berättar.</li>
+              <li>Någon stressar dig att fatta ett snabbt beslut.</li>
+              <li>Du ombeds klicka på en länk eller lämna ut koder.</li>
+              <li>Erbjudandet verkar för bra för att vara sant.</li>
+              <li>Meddelandet innehåller felaktig adress eller ovanligt språk.</li>
             </ul>
           </article>
 
-          <article class="password-card">
-            <h2>Skydda barnets uppgifter</h2>
+          <article class="fraud-card">
+            <h2>Kontrollera avsändaren</h2>
             <p>
-              Lär barnet att inte dela namn, adress, skola, telefonnummer, bilder eller
-              lösenord med personer på nätet. Förklara också att bilder och meddelanden
-              kan sparas och spridas vidare.
+              Ring organisationen på ett telefonnummer du själv har hittat.
+              Använd inte kontaktuppgifter i meddelandet. Banker och myndigheter
+              ber dig inte att lämna ut ditt lösenord eller din engångskod.
             </p>
           </article>
 
-          <article class="password-card">
-            <h2>Skapa trygga vanor</h2>
+          <article class="fraud-card">
+            <h2>Skydda dina pengar</h2>
             <p>
-              Gå tillsammans igenom sekretessinställningar, blockering och rapportering
-              i de appar barnet använder. Hjälp barnet att använda starka lösenord och
-              tvåstegsverifiering där det går.
+              Logga in genom att skriva webbadressen själv eller använda den
+              officiella appen. Godkänn aldrig en betalning eller inloggning som
+              du inte själv har startat.
             </p>
           </article>
 
-          <article class="password-card">
-            <h2>Om något känns fel</h2>
-            <p>
-              Spara meddelanden eller skärmbilder, blockera personen och rapportera
-              kontot. Kontakta skolan eller en annan trygg vuxen vid mobbning och hot.
-              Vid akut fara ska ni ringa <strong>112</strong>.
-            </p>
+          <article class="fraud-card">
+            <h2>Om du redan har blivit lurad</h2>
+            <ol>
+              <li>Kontakta banken direkt och spärra kort eller konto.</li>
+              <li>Byt lösenord som kan vara röjda.</li>
+              <li>Spara meddelanden och skärmbilder som bevis.</li>
+              <li>Polisanmäl bedrägeriet och berätta vad som har hänt.</li>
+            </ol>
           </article>
         </section>
       </div>
