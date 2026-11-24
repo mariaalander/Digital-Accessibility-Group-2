@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Information om hur du håller dig trygg och säker på internet."
+      content="Så håller du dig säker på internet"
     />
     <title>Trygg på internet</title>
     <style>
@@ -132,6 +132,79 @@
         outline-offset: 4px;
       }
 
+      /* Reglage för lättläst */
+
+      .easy-toggle {
+        border: none;
+        background: transparent;
+        color: var(--navy);
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      .toggle-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+      }
+
+      .toggle-track {
+        position: relative;
+        display: block;
+        width: 54px;
+        height: 28px;
+        border-radius: 20px;
+        background: #596b80;
+        transition: background-color 0.2s ease;
+      }
+
+      .toggle-thumb {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #ffffff;
+        transition: transform 0.2s ease;
+      }
+
+      /* När lättläst är påslaget */
+
+      .easy-toggle[aria-checked="true"] .toggle-track {
+        background: var(--navy);
+      }
+
+      .easy-toggle[aria-checked="true"] .toggle-thumb {
+        transform: translateX(26px);
+      }
+
+      .toggle-status {
+        display: none;
+      }
+
+      .easy-toggle:focus-visible {
+        outline: 4px solid var(--focus);
+        outline-offset: 4px;
+        border-radius: 0.5rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .toggle-track,
+        .toggle-thumb {
+          transition: none;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .toggle-wrapper {
+          height: 38px;
+        }
+      }
+
+
+
       main {
         max-width: 1200px;
         margin: 0 auto;
@@ -145,7 +218,7 @@
         border-radius: 1.5rem;
         background: var(--title-blue);
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 700;
       }
 
@@ -305,13 +378,23 @@
           <span>Språk</span>
         </button>
 
-        <a class="nav-link" href="#lattlast">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" />
-            <path d="M8 13c4-3 8-3 12 0v18c-4-3-8-3-12 0V13Zm24 0c-4-3-8-3-12 0v18c4-3 8-3 12 0V13Z" fill="#ffffff" />
-          </svg>
+        <button
+                class="nav-link easy-toggle"
+                id="easy-toggle"
+                type="button"
+                role="switch"
+                aria-checked="false"
+                aria-label="Lättläst"
+        >
+  <span class="toggle-wrapper" aria-hidden="true">
+  <span class="toggle-track">
+    <span class="toggle-thumb"></span>
+  </span>
+</span>
+
           <span>Lättläst</span>
-        </a>
+          <span class="toggle-status" aria-hidden="true">Av</span>
+        </button>
         <a class="nav-link" href="#kontakt">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <circle cx="20" cy="20" r="18" />
@@ -331,7 +414,7 @@
 
     <main id="main-content">
       <p class="intro">
-        Information om hur du håller dig trygg och säker på internet
+        Så håller du dig säker på internet
       </p>
 
       <section aria-labelledby="topics-heading">
@@ -348,7 +431,7 @@
                 </span>
                 Säkra lösenord
               </h2>
-              <p class="topic-description">Allt om lösenordshantering</p>
+              <p class="topic-description">Så skapar du bra lösenord och skyddar dem.</p>
             </a>
           </li>
           <li id="bedragerier" class="topic-card">
@@ -362,7 +445,7 @@
                 </span>
                 Bedrägerier
               </h2>
-              <p class="topic-description">Tecken på bedrägeri och vad du gör om du blivit lurad</p>
+              <p class="topic-description">Lär dig att känna igen bedrägerier och läs om vad du ska göra om någon lurar dig.</p>
             </a>
           </li>
           <li id="foraldrar-och-barn" class="topic-card">
@@ -375,9 +458,9 @@
                     <path d="M2.5 19a5.5 5.5 0 0 1 11 0M11 19a5 5 0 0 1 10 0" />
                   </svg>
                 </span>
-                Föräldrar och barn
+                Hjälpa andra på internet
               </h2>
-              <p class="topic-description">Vad du ska tänka på som förälder när ditt barn befinner sig på nätet</p>
+              <p class="topic-description">Så hjälper du barn och vuxna som behöver stöd på internet.</p>
             </a>
           </li>
           <li id="rapportera-handelser" class="topic-card">
@@ -389,9 +472,9 @@
                     <path d="M12 7v6m0 3h.01" />
                   </svg>
                 </span>
-                Att rapportera händelser på internet
+                Anmäla hot och brott
               </h2>
-              <p class="topic-description">Så rapporterar du hot, trakasserier och brott på nätet</p>
+              <p class="topic-description">Så anmäler du hot, brott och kränkningar på internet.</p>
             </a>
           </li>
           <li id="publicera-och-dela" class="topic-card">
@@ -402,9 +485,9 @@
                     <path d="M12 16V4m0 0L8 8m4-4 4 4M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" />
                   </svg>
                 </span>
-                Publicera och dela information
+                Publicera infomration på internet
               </h2>
-              <p class="topic-description">Så skyddar du dig och andra när du delar på nätet</p>
+              <p class="topic-description">Så skyddar du dig själv och andra när du delar bilder och texter på internet.</p>
             </a>
           </li>
           <li id="saker-dig-sjalv" class="topic-card">
@@ -415,13 +498,14 @@
                     <path d="m4 12 5 5L20 6" stroke-width="3" />
                   </svg>
                 </span>
-                Säkra dig själv: checklista
+                Checklista för din säkerhet
               </h2>
-              <p class="topic-description">En enkel checklista för konton, mobil och dator</p>
+              <p class="topic-description">En lista med saker du kan göra för att skydda dina konton, din mobil och din dator.</p>
             </a>
           </li>
         </ul>
       </section>
     </main>
+    <script src="easy-read.js"></script>
   </body>
 </html>

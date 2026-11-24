@@ -58,8 +58,6 @@
       transform: translateY(0);
     }
 
-    /* Sidhuvud */
-
     .site-header {
       display: flex;
       min-height: 100px;
@@ -106,7 +104,9 @@
       fill: var(--navy);
     }
 
-    .language-button {
+    /* Reglage för lättläst */
+
+    .easy-toggle {
       border: none;
       background: transparent;
       color: var(--navy);
@@ -114,13 +114,53 @@
       cursor: pointer;
     }
 
-    .language-button:hover {
-      opacity: 0.8;
+    .toggle-track {
+      position: relative;
+      display: block;
+      width: 54px;
+      height: 28px;
+      border-radius: 20px;
+      background: #596b80;
+      transition: background-color 0.2s ease;
     }
 
-    .language-button:focus-visible {
+    .toggle-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #ffffff;
+      transition: transform 0.2s ease;
+    }
+
+    /* När lättläst är påslaget */
+
+    .easy-toggle[aria-checked="true"] .toggle-track {
+      background: var(--navy);
+    }
+
+    .easy-toggle[aria-checked="true"] .toggle-thumb {
+      transform: translateX(26px);
+    }
+
+    .toggle-status {
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .easy-toggle:focus-visible {
       outline: 4px solid var(--focus);
       outline-offset: 4px;
+      border-radius: 0.5rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .toggle-track,
+      .toggle-thumb {
+        transition: none;
+      }
     }
 
     .title-section {
@@ -144,8 +184,6 @@
       line-height: 1.2;
       transform: translateX(-50%);
     }
-
-    /* Huvudinnehåll */
 
     main {
       min-height: calc(100vh - 230px);
@@ -174,7 +212,16 @@
       padding-top: 4rem;
     }
 
-    /* Bedrägerikort */
+    .page-intro {
+      margin: 0 0 1.8rem;
+      padding: 1.5rem 2rem;
+      border-radius: 2rem;
+      background: var(--title-blue);
+      color: var(--navy);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: center;
+    }
 
     .fraud-grid {
       display: grid;
@@ -304,39 +351,21 @@
 
     <nav class="site-navigation" aria-label="Huvudmeny">
 
-      <button class="nav-link language-button" type="button"
-              aria-label="Byt språk">
-        <svg viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="18" />
+      <button
+              class="nav-link easy-toggle"
+              id="easy-toggle"
+              type="button"
+              role="switch"
+              aria-checked="false"
+              aria-label="Lättläst"
+      >
+        <span class="toggle-track" aria-hidden="true">
+          <span class="toggle-thumb"></span>
+        </span>
 
-          <circle cx="20" cy="20" r="11"
-                  fill="none"
-                  stroke="#ffffff"
-                  stroke-width="2" />
-
-          <ellipse cx="20" cy="20" rx="5" ry="11"
-                   fill="none"
-                   stroke="#ffffff"
-                   stroke-width="2" />
-
-          <path d="M9 20h22"
-                fill="none"
-                stroke="#ffffff"
-                stroke-width="2" />
-        </svg>
-        <span>Språk</span>
-      </button>
-
-      <a class="nav-link" href="#lattlast">
-        <svg viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="18" />
-          <path
-            d="M8 13c4-3 8-3 12 0v18c-4-3-8-3-12 0V13Zm24 0c-4-3-8-3-12 0v18c4-3 8-3 12 0V13Z"
-            fill="#ffffff"
-          />
-        </svg>
         <span>Lättläst</span>
-      </a>
+        <span class="toggle-status" aria-hidden="true">Av</span>
+      </button>
 
       <a class="nav-link" href="#kontakt">
         <svg viewBox="0 0 40 40" aria-hidden="true">
@@ -375,6 +404,10 @@
     </div>
 
     <div class="page-content">
+      <p class="page-intro">
+        Ett bedrägeri är när någon lurar dig för att till exempel få dina pengar.
+        Här får du lära dig hur du skyddar dig och vad du ska göra om du blir lurad.
+      </p>
       <section class="fraud-grid">
 
         <article class="fraud-card">
@@ -382,17 +415,17 @@
           <ul>
             <li>Någon stressar dig att fatta ett snabbt beslut.</li>
             <li>Du ombeds klicka på en länk eller lämna ut koder.</li>
-            <li>Erbjudandet verkar för bra för att vara sant.</li>
-            <li>Meddelandet innehåller felaktig adress eller ovanligt språk.</li>
+            <li>Du får ett erbjudande som verkar för bra för att vara sant.</li>
+            <li>Du får ett meddelande med ett ovanligt språk eller från en okänd adress.</li>
           </ul>
         </article>
 
         <article class="fraud-card">
           <h2>Kontrollera avsändaren</h2>
           <p>
-            Ring organisationen på ett telefonnummer du själv har hittat.
+            Ring organisationen på ett telefonnummer som du själv har hittat.
             Använd inte kontaktuppgifter i meddelandet. Banker och myndigheter
-            ber dig inte att lämna ut ditt lösenord eller din engångskod.
+            ber dig aldrig att lämna ut dina lösenord eller säkerhetskoder.
           </p>
         </article>
 

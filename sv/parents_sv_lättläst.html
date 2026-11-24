@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Råd till dig som hjälper barn och vuxna att vara säkra på internet."
+  />
+  <title>Hjälpa andra på internet | Trygg på internet</title>
+
+  <style>
+    :root {
+      --navy: #0c2345;
+      --light-blue: #b7cde8;
+      --title-blue: #b0c9eb;
+      --page-background: #f8f8f7;
+      --focus: #6a35ff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--navy);
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.4;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 4px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 10;
+      padding: 0.75rem 1rem;
+      border-radius: 0.25rem;
+      background: #ffffff;
+      font-weight: 700;
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* Sidhuvud */
+
+    .site-header {
+      display: flex;
+      min-height: 100px;
+      background: var(--navy);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      padding: 0.75rem 2rem;
+    }
+
+    .brand svg {
+      width: 65px;
+      height: 75px;
+    }
+
+    .site-navigation {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      padding: 0.75rem 2rem;
+      background: var(--light-blue);
+    }
+
+    .nav-link {
+      display: flex;
+      min-width: 75px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem;
+      padding: 0.35rem 0.4rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .nav-link svg {
+      width: 48px;
+      height: 48px;
+      fill: var(--navy);
+    }
+
+    /* Sidans titel */
+
+    .title-section {
+      position: relative;
+      height: 130px;
+      background: var(--page-background);
+    }
+
+    .page-title {
+      position: absolute;
+      z-index: 1;
+      bottom: -50px;
+      left: 50%;
+      width: min(90%, 430px);
+      margin: 0;
+      padding: 1.5rem 1rem;
+      border-radius: 2rem;
+      background: var(--title-blue);
+      text-align: center;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      transform: translateX(-50%);
+    }
+
+    /* Huvudinnehåll */
+
+    main {
+      min-height: calc(100vh - 230px);
+      padding: 1rem 1rem 5rem;
+      background: var(--navy);
+    }
+
+    .breadcrumb {
+      padding: 0.25rem 1rem;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .page-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 4rem;
+    }
+
+    .page-intro {
+      margin: 0 0 1.8rem;
+      padding: 1.5rem 2rem;
+      border-radius: 2rem;
+      background: var(--title-blue);
+      color: var(--navy);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .password-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 1.35rem;
+    }
+
+    .password-card {
+      min-height: 265px;
+      padding: 1.6rem 1.8rem;
+      border-radius: 2rem;
+      background: var(--page-background);
+    }
+
+    .password-card:first-child {
+      grid-row: span 2;
+      min-height: 457px;
+    }
+
+    .password-card h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .password-card p {
+      margin: 1rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .password-card ul {
+      margin: 1.2rem 0 0;
+      padding-left: 1.25rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .password-card li + li {
+      margin-top: 0.65rem;
+    }
+
+    /* Mobilanpassning */
+
+    @media (max-width: 680px) {
+      .site-header {
+        min-height: 80px;
+      }
+
+      .brand {
+        padding: 0.6rem 1rem;
+      }
+
+      .brand svg {
+        width: 45px;
+        height: 55px;
+      }
+
+      .site-navigation {
+        gap: 0;
+        padding: 0.4rem;
+      }
+
+      .nav-link {
+        min-width: 58px;
+        font-size: 0.75rem;
+      }
+
+      .nav-link svg {
+        width: 38px;
+        height: 38px;
+      }
+
+      .title-section {
+        height: 110px;
+      }
+
+      .page-title {
+        bottom: -40px;
+        padding: 1.2rem 1rem;
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 1rem 1rem 3rem;
+      }
+
+      .breadcrumb {
+        padding: 0.5rem 0;
+        font-size: 0.85rem;
+      }
+
+      .page-content {
+        padding-top: 3.5rem;
+      }
+
+      .password-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .password-card,
+      .password-card:first-child {
+        min-height: auto;
+        padding: 1.5rem 1.35rem;
+        border-radius: 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Hoppa till huvudinnehållet</a>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Trygg på internet, startsida">
+      <svg viewBox="0 0 48 54" aria-hidden="true">
+        <path
+          d="M24 2 43 12v15c0 12-7.5 20.5-19 25C12.5 47.5 5 39 5 27V12L24 2Z"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="2"
+        />
+        <path d="m13 26 7 7 15-15" fill="none" stroke="#ffffff" stroke-width="2" />
+      </svg>
+    </a>
+
+    <nav class="site-navigation" aria-label="Huvudmeny">
+      <a class="nav-link" href="#lattlast">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" />
+          <path d="M8 13c4-3 8-3 12 0v18c-4-3-8-3-12 0V13Zm24 0c-4-3-8-3-12 0v18c4-3 8-3 12 0V13Z" fill="#ffffff" />
+        </svg>
+        <span>Lättläst</span>
+      </a>
+
+      <a class="nav-link" href="#kontakt">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" />
+          <path d="M11 13h18v12H18l-5 4v-4h-2V13Z" fill="#ffffff" />
+        </svg>
+        <span>Kontakt</span>
+      </a>
+
+      <a class="nav-link" href="#meny">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" />
+          <path d="M12 13h2m4 0h10M12 20h2m4 0h10M12 27h2m4 0h10" stroke="#ffffff" stroke-width="2.5" />
+        </svg>
+        <span>Meny</span>
+      </a>
+    </nav>
+  </header>
+
+  <div class="title-section">
+    <h1 class="page-title">Hjälpa andra på internet</h1>
+  </div>
+
+  <main id="main-content">
+    <div class="breadcrumb">
+      <a href="../index.html">Start</a>
+      <span aria-hidden="true"> &gt; </span>
+      <span aria-current="page">Hjälpa andra på internet</span>
+    </div>
+
+    <div class="page-content">
+
+      <p class="page-intro">
+        Den här sidan är för dig som hjälper någon att vara säker på internet.
+        Du kan till exempel vara förälder, god man, anhörig eller arbeta med
+        personer som behöver stöd.
+      </p>
+
+      <section class="password-grid">
+
+        <article class="password-card">
+          <h2>Prata om internet</h2>
+          <ul>
+            <li>Visa intresse för vad personen gör på internet och vilka appar personen använder.</li>
+            <li>Förklara att man inte behöver svara på meddelanden som känns obehagliga.</li>
+            <li>Berätta att personen alltid kan be dig om hjälp.</li>
+            <li>Lyssna lugnt utan att lägga skulden på personen.</li>
+            <li>Förklara på ett sätt som personen förstår.</li>
+          </ul>
+        </article>
+
+        <article class="password-card">
+          <h2>Skydda personens uppgifter</h2>
+          <p>
+            Förklara vilka uppgifter som är viktiga att skydda. Det kan vara adress, telefonnummer,
+            lösenord och privata bilder. Berätta att andra kan spara och sprida bilder och meddelanden.
+          </p>
+        </article>
+
+        <article class="password-card">
+          <h2>Skapa trygga vanor</h2>
+          <p>
+            Gå tillsammans igenom inställningarna i de appar som personen använder. Visa hur man
+            blockerar och anmäler andra användare. Hjälp personen att skapa säkra lösenord och
+            använda extra skydd vid inloggning.
+          </p>
+        </article>
+
+        <article class="password-card">
+          <h2>Om något känns fel</h2>
+          <p>
+            Hjälp personen att spara meddelanden och skärmbilder. Visa hur man blockerar och anmäler
+            någon. Hjälp personen att söka stöd om någon hotar, lurar eller behandlar personen illa.
+            Ring <strong>112</strong> vid akut fara.
+          </p>
+        </article>
+
+        <article class="password-card">
+          <h2>Hjälp utan att ta över</h2>
+          <p>
+            Fråga personen vilken hjälp den behöver. Visa hur man gör och låt personen prova själv.
+            Anpassa hjälpen efter personens behov. Respektera personens rätt att bestämma själv och
+            ha ett privat liv.
+          </p>
+        </article>
+
+      </section>
+    </div>
+  </main>
+</body>
+</html>
